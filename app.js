@@ -1,13 +1,16 @@
 const express = require('express');
-
 const multer = require('multer');
+const mongoose = require('mongoose');
 
 const app = express();
 
 const fs = require('fs');
 
 // connect to mongodb 
-const dbURI = 'mongodb+srv://admin:admin@blog-ejs.39nke.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const dbURI = 'mongodb+srv://admin:admin@blog-ejs.39nke.mongodb.net/Blog-EJS?retryWrites=true&w=majority';
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then((result) => app.listen(PORT, () => console.log(`App running on http://localhost:${PORT}`)))
+    .catch((err) => console.log(err));
 
 // var jsdom = require("jsdom");
 // var JSDOM = jsdom.JSDOM;
@@ -71,5 +74,3 @@ app.post('/post', (req, res, next) => {
 app.use((req, res) => {
     res.status(404).render('404', { title: '404' });
 })
-
-app.listen(PORT, () => console.log(`App running on http://localhost:${PORT}`));
