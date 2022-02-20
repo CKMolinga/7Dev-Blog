@@ -6,6 +6,9 @@ const app = express();
 
 const fs = require('fs');
 
+// connect to mongodb 
+const dbURI = 'mongodb+srv://admin:admin@blog-ejs.39nke.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+
 // var jsdom = require("jsdom");
 // var JSDOM = jsdom.JSDOM;
 
