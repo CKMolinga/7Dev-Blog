@@ -57,6 +57,10 @@
             font-weight: 300;
         }
         
+        a:hover {
+            color: crimson;
+        }
+        
         footer {
             color: #777;
             text-align: center;
@@ -70,6 +74,17 @@
         h3 {
             text-transform: capitalize;
             margin-bottom: 8px;
+        }
+        
+        .title {
+            text-transform: uppercase;
+            cursor: pointer;
+            color: rgba(220, 20, 60, 0.61);
+        }
+        
+        .snippet {
+            padding: 10px 0 25px 0px;
+            color: #777;
         }
         
         .content {
@@ -112,20 +127,4 @@
         }
     </style>
 
-    <script>
-        const blogPost = document.querySelector('.blog-post');
-        const blogTitle = document.querySelector('#title');
-        const blogSnippet = document.querySelector('#snippet');
-        const blogBody = document.querySelector('#body');
-
-        blogPost.addEventListener('submit', (e) => {
-            e.preventDefault();
-            // alert('working');
-            let data = {
-                title: blogTitle.value,
-                snippet: blogSnippet.value,
-            }
-            data.push(this.blogs);
-        })
-    </script>
 </head>
