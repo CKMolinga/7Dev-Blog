@@ -92,7 +92,7 @@ app.post('/blogs', (req, res) => {
     //     res.send(`You have uploaded this image: <hr/><img src="${req.file.path}" width="500"><hr /><a href="./">Upload another image</a>`);
     // });
 
-    console.log(req.body);
+    // console.log(req.body); 
 
     const blog = new Blog(req.body);
 
@@ -123,7 +123,7 @@ app.get('/blogs/:id', (req, res) => {
 app.delete('/blogs/:id', (req, res) => {
     const id = req.params.id;
 
-    Blog.findById(id)
+    Blog.findByIdAndDelete(id)
         .then(result => {
             res.json({
                 redirect: '/blogs'
@@ -135,16 +135,16 @@ app.delete('/blogs/:id', (req, res) => {
 })
 
 
-app.post('/post', (req, res, next) => {
-    // upload(req, res, err => {
-    //     if (err) {
-    //         return res.send('Something went wrong');
-    //     }
-    // });
-    console.log(req.body);
-    res.redirect('/');
+// app.post('/post', (req, res, next) => {
+//     // upload(req, res, err => {
+//     //     if (err) {
+//     //         return res.send('Something went wrong');
+//     //     }
+//     // });
+//     console.log(req.body);
+//     res.redirect('/');
 
-})
+// })
 
 app.use((req, res) => {
     res.status(404).render('404', { title: '404' });

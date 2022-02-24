@@ -4,18 +4,18 @@ const Schema = mongoose.Schema;
 const blogSchema = new Schema({
     title: {
         type: String,
-        required: true
+        // required: true, 
     },
     snippet: {
         type: String,
-        required: true
+        // required: true, 
     },
     image: {
         // type: file, 
     },
     body: {
         type: String,
-        required: true
+        // required: true, 
     }
 }, {
     timestamps: true
